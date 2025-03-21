@@ -4,7 +4,7 @@ Discord kept adding too much crap cluttering the interface, so it was time to se
 
 # Usage
 
-Open up the console, paste the below, hit Enter et voila! You may need to enable the inspector first.
+Open up the console, paste the below, hit Enter et voila! You may need to enable the inspector first. Anything you want to still include, just delete the line first.
 
 ```css
 style = `<style>

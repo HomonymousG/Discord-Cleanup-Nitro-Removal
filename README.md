@@ -1,6 +1,6 @@
 # Discord Cleanup/Nitro Removal
 
-Discord kept adding too much crap cluttering the interface, so it was time to set things right again. I don't know what I'm doing but I found others who had achieved what I was looking for, and built upon those as things kept changing. It's now too big to store in a discord post, so it can live here instead where it's more readable.
+Discord kept adding too much crap cluttering the interface, so it was time to set things right again. I don't know what I'm doing but I found others who had achieved what I was looking for, and built upon those as things kept changing. It's now mor robust and shouldn't break with updates as easily, but also grown too big to store in a discord post so it can live here instead.
 
 # Usage
 
@@ -58,6 +58,8 @@ document.head.innerHTML += style
 ```
 
 Hot top for web users - paste the above into https://caiorss.github.io/bookmarklet-maker/ and hit Generate, save the output as a bookmark in your browser and you can run it from the URL bar whenever you reload Discord.
+
+
 
 
 Originally based on https://github.com/Znunu/Discord-Purge-Nitro, with some added inspiration from https://github.com/bytebone/discord-ui-cleanup

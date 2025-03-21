@@ -57,4 +57,7 @@ none {display:none !important;}
 document.head.innerHTML += style
 ```
 
+Hot top for web users - paste the above into https://caiorss.github.io/bookmarklet-maker/ and hit Generate, save the output as a bookmark in your browser and you can run it from the URL bar whenever you reload Discord.
+
+
 Originally based on https://github.com/Znunu/Discord-Purge-Nitro, with some added inspiration from https://github.com/bytebone/discord-ui-cleanup

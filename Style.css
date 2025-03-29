@@ -10,6 +10,7 @@ div[aria-label="Leave Group"],                                                 /
 div[id="profile-customization-tab"] > div[class^="container_"],                /* Remove "Give your profile a fresh look" in User Profiles */
 div[class^="premiumFeatureBorder"],                                            /* Remove Nitro theme previews in Profile and Appearance */
 div[class^="upsellContainer"],                                                 /* Remove various Nitro upgrade pester buttons */
+div[class^="upsellOverlay"],                                                   /* Remove Per-Server theme Nitro pester */
 div[id="appearance-tab"] > div > div[class^="children_"]
   > div[class^="marginTop8_"] > div > div[class^="selectionGroup_"],           /* Remove Nitro alternative app icons in Appearance */
 div[aria-label="User Settings"] > div[aria-label="Family Center"],             /* Remove Family Centre in User Settings */

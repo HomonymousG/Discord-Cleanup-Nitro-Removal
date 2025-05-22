@@ -9,6 +9,7 @@ Open up the console, paste the below, hit Enter et voila! You may need to enable
 ```css
 style = `<style>
 
+div[class*="nameplated_"] > div[class^="container_"],                          /* Remove user nameplates */
 span[class^="chipletContainer"],                                               /* Remove server tags */
 div[class^="footer_"],                                                         /* Remove Discover button */
 button[aria-label="Open sticker picker"],                                      /* Remove sticker picker */

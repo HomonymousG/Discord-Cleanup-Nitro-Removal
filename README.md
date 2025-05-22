@@ -9,6 +9,7 @@ Open up the console, paste the below, hit Enter et voila! You may need to enable
 ```css
 style = `<style>
 
+span[class^="chipletContainer"],                                               /* Remove server tags */
 div[class^="footer_"],                                                         /* Remove Discover button */
 button[aria-label="Open sticker picker"],                                      /* Remove sticker picker */
 button[aria-label="Send a gift"],                                              /* Remove gift button */

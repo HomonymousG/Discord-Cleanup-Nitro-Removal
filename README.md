@@ -16,6 +16,7 @@ button[aria-label="Open sticker picker"],                                      /
 button[aria-label="Send a gift"],                                              /* Remove gift button */
 button[aria-label="Apps"],                                                     /* Remove apps button */
 div[aria-label="Edit Image with Apps"],                                        /* Remove image apps button */
+div[class^="gifFavoriteButton_"],                                              /* Remove gif favourites button */
 ol[aria-label="Messages in "] > div[class^="containerExpanded_"],              /* Remove sticker wave option in new DMs */
 ul[aria-label="Direct Messages"] > li:has(a[href="/store"], a[href="/shop"]),  /* Remove Nitro and Shop tab under Friends */
 div[aria-label="Close DM"],                                                    /* Remove the X to close DM */
@@ -50,6 +51,8 @@ nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) :nth-child(n+33):nth-child(-n+34),   /* Remove Delete Server */
 button[class^="shinyButton"],                                                  /* Remove various "Unlock with Boosting" buttons */
 none {display:none !important;}
+
+div[class^="gifTag_"] {transform:scale(0.3);  transform-origin: top left;}     /* Reduce gif badge size */
 
 :root {                                                                        /* Restore original font, kinda*/
   --font-primary: "Whitney Book", "gg sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;

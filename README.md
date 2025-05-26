@@ -1,6 +1,6 @@
 # Discord Cleanup/Nitro Removal
 
-Discord kept adding too much crap cluttering the interface, so it was time to set things right again. I don't know what I'm doing but I found others who had achieved what I was looking for, and built upon those as things kept changing. It's now mor robust and shouldn't break with updates as easily, but also grown too big to store in a discord post so it can live here instead.
+Discord kept adding too much crap cluttering the interface, so it was time to set things right again. I don't know what I'm doing but I found others who had achieved what I was looking for, and built upon those as things kept changing. It's now more robust and shouldn't break with updates as easily, but has also grown far too big to store in a discord post so it can live here instead.
 
 # Usage
 
@@ -29,12 +29,27 @@ div[class^="profileCustomizationSection_"] > div
 div[class^="upsellOverlay"],                                                   /* Remove Per-Server theme Nitro pester */
 div[id="appearance-tab"] > div > div[class^="children_"]
   > div[class^="selectionGroup_"],                                             /* Remove Nitro alternative app icons in Appearance */
-div[aria-label="User Settings"] > div[aria-label="Family Center"],             /* Remove Family Centre in User Settings */
-div[id="user-settings-cog-Family_Center"],                                     /* Remove Family Centre in cogwheel right-click */
-div[aria-label="User Settings"] :nth-child(n+13):nth-child(-n+19),             /* Remove Billing section in User Settings */
-div[id="user-settings-cog"] > div :nth-child(n+10):nth-child(-n+14),           /* Remove Server boost, Supscriptions, Gift Inventory, Billing from cogwheel right click */
-div[aria-label="User Settings"] :nth-child(n+38):nth-child(-n+39),             /* Remove Merch and Hype Squad in User Settings */
+div[aria-label="User Settings"] > div[aria-label^="Family Cent"],              /* Remove Family Centre/Center in User Settings */
+div[id^="user-settings-cog-Family_Cent"],                                      /* Remove Family Centre/Center in cogwheel right-click */
+div[aria-label="User Settings"]
+  > div[class^="header_"]:has(+ div[aria-label="Nitro"]),                      /* Remove Payment Settings in User Settings */
+div[aria-label="User Settings"] > div[aria-label="Nitro"],                     /* Remove Nitro in User Settings */
+div[id="user-settings-cog-Discord_Nitro"],                                     /* Remove Nitro in cogwheel right-click */
+div[aria-label="User Settings"]
+  > div[aria-label="Nitro"] + div,                                             /* Remove Server Boost in User Settings */
+div[id="user-settings-cog-Nitro_Server_Boost"],                                /* Remove Server Boost in cogwheel right-click */
+div[aria-label="User Settings"] > div[aria-label="Subscriptions"],             /* Remove Subscriptions in User Settings */
+div[id="user-settings-cog-Subscriptions"],                                     /* Remove Subscriptions in cogwheel right-click */
+div[aria-label="User Settings"] > div[aria-label="Gift Inventory"],            /* Remove Gift Inventory in User Settings */
+div[id="user-settings-cog-Library_Inventory"],                                 /* Remove Gift Inventory in cogwheel right-click */
+div[aria-label="User Settings"] > div[aria-label="Billing"],                   /* Remove Billing in User Settings */
+div[id="user-settings-cog-Billing"],                                           /* Remove Billing in cogwheel right-click */
+div[aria-label="User Settings"]
+  > div[aria-label="Billing"] + div[class^="separator_"],                      /* Remove divider line beneath Billing in User Settings */
+div[aria-label="User Settings"] > div[aria-label="Merch"],                     /* Remove Merch in User Settings */
 div[id="user-settings-cog-merchandise"],                                       /* Remove Merch in cogwheel right-click */
+div[aria-label="User Settings"]
+  > div[aria-label="Merch"] + div[class^="item_"],                             /* Remove HypeSquad in User Settings */
 div[id="user-settings-cog-Hypesquad_Online"],                                  /* Remove Hype Squad in cogwheel right-click */
 nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) > div[aria-label="Boost Perks"],     /* Remove Boost Perks in Server */
@@ -62,10 +77,10 @@ nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) > div[aria-label="Delete Server"],   /* Remove Delete Server in Server */
 button[class^="shinyButton"],                                                  /* Remove various "Unlock with Boosting" buttons */
 div[aria-label="Members"]
-  > h3[class^="membersGroup"]:has(> span[class^="headerContainer_"]),          /* Remove Activity section in Members List */
+  > h3[class^="membersGroup"]:has(> span[class^="headerContainer_"]),          /* Remove Activity section in members list */
 none {display:none !important;}
 
-div[class^="gifTag_"] {transform:scale(0.3);  transform-origin: top left;}     /* Reduce gif badge size */
+div[class^="gifTag_"] {transform:scale(0.3);  transform-origin: top left;}     /* Reduce GIF badge size */
 div[class*="sansAttachButton_"] > div[class^="buttons_"] {gap: var(--space-2);}/* Reduce massive space between message input box buttons */
 div[class^="layers_"] > div[class^="layer_"]
   > div[class^="container_"] {--custom-chat-input-margin-bottom: 8px;}         /* Remove massive space below message input box */

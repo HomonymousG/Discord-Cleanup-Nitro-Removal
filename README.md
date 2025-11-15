@@ -8,27 +8,29 @@ Open up the console, paste the below, hit Enter et voila! You may need to enable
 
 ```css
 style = `<style>
-
 div[aria-label="Servers"] ~ div[class^="listItem_"],                           /* Remove Discover button */
-button[aria-label="Open sticker picker"],                                      /* Remove sticker picker */
-button[aria-label="Send a gift"],                                              /* Remove gift button */
-button[aria-label="Apps"],                                                     /* Remove apps button */
-div[aria-label="Edit Image with Apps"],                                        /* Remove image apps button */
+div[aria-label="Open sticker picker"],                                         /* Remove sticker picker */
+div[aria-label="Send a gift"],                                                 /* Remove gift button */
+div[class$="app-launcher-entrypoint"],                                         /* Remove apps button */
+div[class^="chatGradient_"],                                                   /* Remove gradients above chat box */
+div[class^="chatTypingGradientAtBottom_"],                                     /*                                 */
+div[class^="chatTypingGradientNotAtBottom_"],                                  /*                                 */
 div[class*="nameplated_"] > div[class^="container_"],                          /* Remove user nameplates */
 span[class^="chipletContainer"],                                               /* Remove server tags */
+div[class*="colorPremium_"],                                                   /* Remove Nitro banner ad */
 div[class^="gifFavoriteButton_"],                                              /* Remove gif favourites button */
 ol[aria-label="Messages in "] > div[class^="containerExpanded_"],              /* Remove sticker wave option in new DMs */
-ul[aria-label="Direct Messages"] > li:has(a[href="/store"], a[href="/shop"]),  /* Remove Nitro and Shop tab under Friends */
+ul[aria-label="Direct Messages"] > li:has(a[href="/shop"], a[href="/channels/@me/1388366732267360316"]),  /* Remove Shop tab under Friends, also Discord DM spam */
+ul[aria-label="Direct Messages"] > div:has(a[href="/store"], a[href="/quest-home"]),  /* Remove Nitro and Quests tab under Friends */
+ul[aria-label="Direct Messages"] > li > div > div[style^="background:"],       /* Remove Nitro flair on friend mousover */
 div[aria-label="Close DM"],                                                    /* Remove the X to close DM */
 div[aria-label="Leave Group"],                                                 /* Remove the X to close group DM */
-div[id="profile-customization-tab"] > div[class^="container_"],                /* Remove "Give your profile a fresh look" in User Profiles */
+div[id="profile-customization-tab"] > div > div > div[class^="container_"],    /* Remove "Give your profile a fresh look" in User Profiles */
 div[class^="premiumFeatureBorder"],                                            /* Remove Nitro theme previews in Profile and Appearance */
 div[class^="upsellContainer"],                                                 /* Remove various Nitro upgrade pester buttons */
 div[class^="profileCustomizationSection_"] > div
-  > div[class^="sectionsContainer_"] :nth-child(n+4):nth-child(-n+6),          /* Remove Avatar Decoration, Nameplate and Profile Effect in Profiles */
+  > div[class^="sectionsContainer_"] :nth-child(n+5):nth-child(-n+7),          /* Remove Avatar Decoration, Nameplate and Profile Effect in Profiles */
 div[class^="upsellOverlay"],                                                   /* Remove Per-Server theme Nitro pester */
-div[id="appearance-tab"] > div > div[class^="children_"]
-  > div[class^="selectionGroup_"],                                             /* Remove Nitro alternative app icons in Appearance */
 div[aria-label="User Settings"] > div[aria-label^="Family Cent"],              /* Remove Family Centre/Center in User Settings */
 div[id^="user-settings-cog-Family_Cent"],                                      /* Remove Family Centre/Center in cogwheel right-click */
 div[aria-label="User Settings"]
@@ -46,11 +48,14 @@ div[aria-label="User Settings"] > div[aria-label="Billing"],                   /
 div[id="user-settings-cog-Billing"],                                           /* Remove Billing in cogwheel right-click */
 div[aria-label="User Settings"]
   > div[aria-label="Billing"] + div[class^="separator_"],                      /* Remove divider line beneath Billing in User Settings */
+div[aria-labelledby^="uid_"] > div[class^="container_"],                       /* Remove "Make your Discord look juuust right" in Appearance */
+div[aria-labelledby^="uid_"] > div[class^="colorThemesBackground_"],           /* Remove Nitro colour themes in Appearance */
+div[id="appearance-tab"] > div > div > div[class^="selectionGroup_"],          /* Remove Nitro alternative app icons in Appearance */
 div[aria-label="User Settings"] > div[aria-label="Merch"],                     /* Remove Merch in User Settings */
 div[id="user-settings-cog-merchandise"],                                       /* Remove Merch in cogwheel right-click */
-div[aria-label="User Settings"]
-  > div[aria-label="Merch"] + div[class^="item_"],                             /* Remove HypeSquad in User Settings */
-div[id="user-settings-cog-Hypesquad_Online"],                                  /* Remove Hype Squad in cogwheel right-click */
+nav[class^="sidebar_"]
+  > div:not([aria-label="User Settings"]) > div[aria-label="Server Tag"],      /* Remove Server Tag in Server */
+div[id="guild-context-guild-settings--TAG"],                                   /* Remove Server Tag in Server Right-click */
 nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) > div[aria-label="Boost Perks"],     /* Remove Boost Perks in Server */
 div[id="guild-context-guild-settings--BOOST_PERKS"],                           /* Remove Boost Perks in Server Right-click */
@@ -68,26 +73,28 @@ nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) > div[aria-label="Enable Community"],/* Remove Enable Community in Server */
 div[id="guild-context-guild-settings--COMMUNITY"],                             /* Remove Community Settings in Server Right-click */
 nav[class^="sidebar_"] > div:not([aria-label="User Settings"])
-  > div[aria-label="Server Subscriptions"],                                    /* Remove Server Subscriptions in Server */
-div[id="guild-context-guild-settings--ROLE_SUBSCRIPTIONS"],                    /* Remove Server Subscriptions in Server Right-click */
-nav[class^="sidebar_"] > div:not([aria-label="User Settings"])
   > div[aria-label="Server Boost Status"],                                     /* Remove Server Boost Status in Server */
 div[id="guild-context-guild-settings--GUILD_PREMIUM"],                         /* Remove Server Boost Status in Server Right-click */
 nav[class^="sidebar_"]
   > div:not([aria-label="User Settings"]) > div[aria-label="Delete Server"],   /* Remove Delete Server in Server */
-button[class^="shinyButton"],                                                  /* Remove various "Unlock with Boosting" buttons */
 div[aria-label="Members"]
   > h3[class^="membersGroup"]:has(> span[class^="headerContainer_"]),          /* Remove Activity section in members list */
 none {display:none !important;}
 
 div[class^="gifTag_"] {transform:scale(0.3);  transform-origin: top left;}     /* Reduce GIF badge size */
 div[class*="sansAttachButton_"] > div[class^="buttons_"] {gap: var(--space-2);}/* Reduce massive space between message input box buttons */
-div[class^="layers_"] > div[class^="layer_"]
-  > div[class^="container_"] {--custom-chat-input-margin-bottom: 8px;}         /* Remove massive space below message input box */
 div[class^="mainContent_"] > h3[class^="name_"] > div[class^="overflow_"]
   {text-transform:uppercase;font-size:85%;font-weight:550;}                    /* Restore capitalised channel categories */
 h3[class^="membersGroup_"]
   {text-transform:uppercase;font-size:80%;font-weight:550;}                    /* Restore capitalised member list role groups */
+.visual-refresh div[class^="jumpToPresentBar_"]                                /* Restore banner-style Jump To Present */
+  {background-color:color-mix(in oklab, var(--neutral-60) 45%,                 /*                                      */
+  var(--theme-base-color,#001)var(--theme-base-color-amount,0%));              /*                                      */
+  left:6px;right:6px;min-height:14px;padding:2px 3px;                          /*                                      */
+  width:auto;bottom:2px;color:#ffffff00;border-radius:var(--radius-sm);}       /*                                      */
+div[class^="jumpToPresentBar_"] > button > div[class^="buttonChildrenWrapper_"] {min-height:20px;} /*                  */
+div[class^="scrollerSpacer_"]{height:20px;}                                    /* Remove empty space above chat box */
+div[class^="typing_"]{height:150px;}                                           /* Restore User Typing notification below chat box */
 
 :root {                                                                        /* Restore original font, kinda*/
   --font-primary: "Whitney Book", "gg sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
